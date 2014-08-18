@@ -36,24 +36,18 @@ If you use custom User models, and haven't specified that permission, or if you 
 authorized to log in as others, you can define the `CAN_IMPERSONATE` setting, like so:
 
 ```
-If you want to impersonate a custom user model:
------------------------------------------------
 
-```
-Define a string with "<name of the app with your custom model>.<name of your custom model>", case sensitive.
-    settings.py:
-    AUTH_USER_MODEL = 'accounts.CustomUserModel'
+Setup:
+-----
 
-Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
-
-```
-# Setup
-```
 settings.py:
-This will only allow admins to log in as other users:
+* This will only allow admins to log in as other users:
+```
     CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin
+```
 
-This will only allow admins to log in as other users, as long as those users are not admins themselves:
+* This will only allow admins to log in as other users, as long as those users are not admins themselves:
+```
     CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin and not target_user.is_admin
 ```
 
@@ -67,6 +61,15 @@ class YourUserAdmin(ModelAdmin):
 admin.site.register(Admin, YourUserAdmin)
 
 ```
+
+If you want to impersonate a custom user model:
+-----------------------------------------------
+* Define a string with "<name of the app with your custom model>.<name of your custom model>", case sensitive.
+    settings.py:
+    AUTH_USER_MODEL = 'accounts.CustomUserModel'
+
+ Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
+
 
 At this point, you should be good to go. Just visit the Django admin, navigate to a user and you should see the "Log
 in as this user" button at the top right of the screen.
