@@ -63,8 +63,11 @@ admin.site.register(Admin, YourUserAdmin)
 If you want to impersonate a custom user model:
 -----------------------------------------------
 * Define a string with "«name of the app with your custom model».«name of your custom model»", case sensitive.
-    settings.py:
-    AUTH_USER_MODEL = 'accounts.CustomUserModel'
+
+settings.py:
+```
+AUTH_USER_MODEL = 'accounts.CustomUserModel'
+```
 
  Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
 
