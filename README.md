@@ -36,24 +36,24 @@ If you use custom User models, and haven't specified that permission, or if you 
 authorized to log in as others, you can define the `CAN_IMPERSONATE` setting, like so:
 
 ```
-If you want to impersonate a custom user model:
+# If you want to impersonate a custom user model:
 
 ```
-# Define a string with <name of the app with your custom model>.<name of your custom model>, case sensitive.
-# settings.py
-AUTH_USER_MODEL = 'accounts.CustomUserModel'
+Define a string with "<name of the app with your custom model>.<name of your custom model>", case sensitive.
+    settings.py:
+    AUTH_USER_MODEL = 'accounts.CustomUserModel'
 
-# Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
+Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
 
 ```
-# settings.py
-
+# Setup
+```
+settings.py:
 This will only allow admins to log in as other users:
-CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin
+    CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin
 
-# This will only allow admins to log in as other users, as long as
-# those users are not admins themselves:
-CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin and not target_user.is_admin
+This will only allow admins to log in as other users, as long as those users are not admins themselves:
+    CAN_IMPERSONATE = lambda request, target_user: request.user.is_admin and not target_user.is_admin
 ```
 
 You'll also need to add the template to it so the button shows up:
