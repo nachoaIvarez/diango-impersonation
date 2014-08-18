@@ -62,7 +62,7 @@ admin.site.register(Admin, YourUserAdmin)
 
 If you want to impersonate a custom user model:
 -----------------------------------------------
-* Define a string with "«name of the app with your custom model».«name of your custom model»", case sensitive.
+* Define a string with "«name of the app with your custom model».«name of your custom model»", case sensitive:
 
 settings.py:
 ```
