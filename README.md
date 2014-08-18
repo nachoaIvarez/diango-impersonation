@@ -35,8 +35,6 @@ urlpatterns += patterns('',
 If you use custom User models, and haven't specified that permission, or if you want to change which users are
 authorized to log in as others, you can define the `CAN_IMPERSONATE` setting, like so:
 
-```
-
 Setup:
 -----
 
