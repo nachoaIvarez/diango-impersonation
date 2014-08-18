@@ -51,8 +51,8 @@ settings.py:
 
 You'll also need to add the template to it so the button shows up:
 
-```
 # admin.py
+```
 class YourUserAdmin(ModelAdmin):
     change_form_template = 'impersonation/change_form.html'
 
@@ -62,7 +62,7 @@ admin.site.register(Admin, YourUserAdmin)
 
 If you want to impersonate a custom user model:
 -----------------------------------------------
-* Define a string with "<name of the app with your custom model>.<name of your custom model>", case sensitive.
+* Define a string with "«name of the app with your custom model».«name of your custom model»", case sensitive.
     settings.py:
     AUTH_USER_MODEL = 'accounts.CustomUserModel'
 
