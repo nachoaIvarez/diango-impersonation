@@ -36,7 +36,8 @@ If you use custom User models, and haven't specified that permission, or if you 
 authorized to log in as others, you can define the `CAN_IMPERSONATE` setting, like so:
 
 ```
-# If you want to impersonate a custom user model:
+If you want to impersonate a custom user model:
+-----------------------------------------------
 
 ```
 Define a string with "<name of the app with your custom model>.<name of your custom model>", case sensitive.
