@@ -1,0 +1,16 @@
+{% extends "admin/change_form.html" %}
+{% load url from future %}
+{% load impersonation_url %}
+
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+ <ul class="object-tools">
+     <li>
+        <a href="{% impersonate_url object_id %}"
+           class="addlink">
+            Log in as this user
+        </a>
+    </li>
+</ul>
+{% endif %}{% endif %}
+{% endblock %}
