@@ -51,7 +51,7 @@ settings.py:
 
 You'll also need to add the template to it so the button shows up:
 
-# admin.py
+admin.py
 ```
 class YourUserAdmin(ModelAdmin):
     change_form_template = 'impersonation/change_form.html'
