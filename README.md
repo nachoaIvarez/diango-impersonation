@@ -4,14 +4,14 @@ django-impersonation
 About
 -----
 
-This is a fork of django-loginas: https://github.com/stochastic-technologies/django-loginas
+Class based view login-as/impersonation app for django with custom user/backend model support.
 
-"Login as this user" for the Django admin.
+This is a fork of django-loginas: https://github.com/stochastic-technologies/django-loginas
 
 Installing django-impersonation
 -------------------------
 
-* Add `impersonation` to your Python path, or install using pip: `pip install django-impersonation`
+* Add `impersonation` to your Python path.
 
 * Add the `impersonation` app to your `INSTALLED_APPS`:
 
