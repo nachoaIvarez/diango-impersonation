@@ -11,8 +11,6 @@ This is a fork of django-loginas: https://github.com/stochastic-technologies/dja
 Installing django-impersonation
 -------------------------
 
-* Add `impersonation` to your Python path.
-
 * Add the `impersonation` app to your `INSTALLED_APPS`:
 
 ```
