@@ -60,16 +60,16 @@ admin.site.register(Admin, YourUserAdmin)
 
 ```
 
-If you want to impersonate a custom user model:
+If you want to impersonate a custom, non-base user model:
 -----------------------------------------------
 * Define a string with "«name of the app with your custom model».«name of your custom model»", case sensitive:
 
 settings.py:
 ```
-AUTH_USER_MODEL = 'accounts.CustomUserModel'
+IMPERSONABLE_MODEL = 'accounts.CustomUserModel'
 ```
 
- Else, don't. It will use django's default 'django.contrib.auth.get_user_model'
+ Else, don't. It will use django's default 'django.contrib.auth.get_user_model', using default base user in settings as AUTH_USER_MODEL
 
 
 At this point, you should be good to go. Just visit the Django admin, navigate to a user and you should see the "Log
