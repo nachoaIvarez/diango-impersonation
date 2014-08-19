@@ -7,6 +7,6 @@ register = template.Library()
 
 @register.simple_tag
 def impersonate_url(pk):
-    model = getattr(settings, "AUTH_USER_MODEL", "user")
+    model = getattr(settings, "IMPERSONABLE_MODEL", "user")
     return reverse('impersonate_user', kwargs={'pk': pk,
                                                'user_model': model})
